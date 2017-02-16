@@ -169,16 +169,16 @@ Para esto, clone el proyecto disponible en
 El proyecto incluye la dependencia:
 
 ```xml	
-	<groupId>org2.pdsw.stubs</groupId> 	
-	<artifactId>ServicesFacadeStub</artifactId> 
-	<version>1.2</version>
+<groupId>org2.pdsw.stubs</groupId>
+<artifactId>KartServicesFacadeStub</artifactId>
+<version>1.4</version>            
 ```
 
 
-La cual provee un API que permite consultar una base de datos de
+La cual provee una clase con servicios que permite consultar una base de datos de
 productos, e incluye operaciones para calcular el costo total de un
 conjunto de ítems (donde cada ítem consta de un producto y una cantidad
-requerida de dicho producto).
+requerida de dicho producto). Por otro lado, incluye un servicio para consultar, en tiempo real, la tasa de cambio de pesos a dólares.
 
 La aplicación ya tiene una página base (shoppingkart.xhtml), y una clase
 que podrá servir como ManagedBean (ShoppingKartBackingBean) la cual aún
@@ -200,9 +200,9 @@ que usted implemente la siguiente funcionalidad:
 3.  En la misma página, se debe mostrar otra tabla, en la que se muestre
     lo que se ha seleccionado hasta el momento.
 
-4.  Se debe tener un botón ‘calcular costos’, el cual, a partir del
-    ‘carrito de compras’ creado hasta el momento, determine (haciendo
-    uso del API suministrado), y lo muestre en la pantalla.
+4.  La interfaz debe ofrecer elementos de formulario que permitan definir en qué moneda se mostrará el costo total de la compra. De la misma manera, la interfaz debe ir mostrando, automáticamente, el valor de los elementos seleccionados hasta ese momento, en la moneda seleccionada. Es decir, si el usuario agrega nuevos elementos al carro de compras, o si cambia el tipo de moneda, automáticamente se debe actualizar el del total mostrado (al igual el texto que indique en qué moneda se está mostrando el valor: COP o USD). Tenga en cuenta que en los servicios suministrados, los productos vienen con sus precios en dólares.
+
+    
 
 Para hacer esto revise:
 
