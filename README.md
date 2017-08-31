@@ -178,9 +178,9 @@ Para esto, clone el proyecto de ESTE respositorio, el cual ya tiene la configura
 3. Se debe poder seleccionar una de las ordenes. Al hacer esto, en otra parte de la interfaz se debe:
     - Mostrar el detalle de los ítems asociados a la orden.
     - Mostrar el valor actual total de la orden.
-    - Ofrecer una opción para agregar un nuevo ítem a la cuenta. Por ahora el modelo no contempla un catálogo de platos, por lo que se deben ingresar los detalles cada vez: tipo de producto (bebida, plato), nombre y precio. Al agregar cada ítem, se debería recalcular y mostrar automáticamente el nuevo valor de la cuenta.
+    - Ofrecer una opción para agregar un nuevo ítem a la cuenta. Por ahora el modelo no contempla un catálogo de platos (ya que no hay una capa de persistencia), por lo que se deben ingresar los detalles cada vez: tipo de producto (bebida, plato), nombre y precio. Al agregar cada ítem, se debería recalcular y mostrar automáticamente el nuevo valor de la cuenta.
     
-Para hacer esto revise:
+Para lo anterior revise:
 
 Sección 3.33 del manual de PrimeFaces, en especial la página 159 que se
 refiere a cómo capturar la selección de una tabla.
@@ -196,5 +196,6 @@ manual, o a través de las demostraciones disponibles en:
 
 Para el ejercicio anterior tenga también en cuenta:
 
+- para la organización de las clases, use el esquema de paquetes del diagrama anterior.
 - La aplicación debería cambiar de comportamiento cuando se cambie la configuración del Contenedor Guice.
 - El esquema de pruebas desarrollado debería seguir funcionando.
