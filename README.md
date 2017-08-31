@@ -1,8 +1,8 @@
-###Escuela Colombiana de Ingeniería
+### Escuela Colombiana de Ingeniería
 
-###Procesos de desarrollo de Software – PDSW
+### Procesos de desarrollo de Software – PDSW
 
-####Frameworks Web MVC – Java Server Faces / Prime Faces
+#### Frameworks Web MVC – Java Server Faces / Prime Faces
 
 En este ejercicio, usted va a desarrollar una aplicación Web basada en
 el marco JSF, y en una de sus implementaciones más usadas: [PrimeFaces]([*http://primefaces.org/*](http://primefaces.org/) ). Se trata de un
@@ -160,50 +160,26 @@ fallido, el premio se reduce en \$10.000.
         los valores del premio?. Dado la anterior, cual es la diferencia
         entre los backing-beans de sesión y los de aplicación?
 
-###Parte II
-
-Ahora, va a realizar un primer prototipo de un ‘carrito de compras’.
-Para esto, clone el proyecto disponible en
-[*https://github.com/PDSW-ECI/Primefaces-ShoppingKart-base.git*](https://github.com/PDSW-ECI/Primefaces-ShoppingKart-base.git).
-
-El proyecto incluye la dependencia:
-
-```xml	
-<groupId>org2.pdsw.stubs</groupId>
-<artifactId>KartServicesFacadeStub</artifactId>
-<version>1.4</version>            
-```
+### Parte II
 
 
-La cual provee una clase con servicios que permite consultar una base de datos de
-productos, e incluye operaciones para calcular el costo total de un
-conjunto de ítems (donde cada ítem consta de un producto y una cantidad
-requerida de dicho producto). Por otro lado, incluye un servicio para consultar, en tiempo real, la tasa de cambio de pesos a dólares.
+Ahora, va a realizar una aplicación (capa de presentación y control Web) que permita manejar los pedidos de un restaurante y el cálculo de las cuentas de los mismos, a partir del modelo realizado en uno de los ejercicios anteriores (basado en Google Guice), donde se desarrolló una 'capa' de servicios:
 
-La aplicación ya tiene una página base (shoppingkart.xhtml), y una clase
-que podrá servir como ManagedBean (ShoppingKartBackingBean) la cual aún
-no tiene todas las anotaciones ni los métodos requeridos. Se requiere
-que usted implemente la siguiente funcionalidad:
+![](img/Model2.png)
 
-1.  La página debe mostrar en una tabla el listado de los
-    productos disponibles.
+Para esto, clone el proyecto de ESTE respositorio, el cual ya tiene la configuración para usar JSF/Primefaces (tenga en cuenta que, además de copiar en éste los fuentes del ejercicio anterior, tendrá que agregar las mismas depedencias Maven).
 
-2.  Se debe poder seleccionar un producto, y luego, en un campo
-    adicional, indicar la cantidad que se quiere comprar del mismo. Al
-    hacer clic en un botón de ‘agregar a carrito’, se debe hacer la
-    operación respectiva: crear un ítem nuevo (producto y cantidad), y
-    agregarlo una colección de dichos ítems que debería mantenerse en
-    el managed-bean. Tenga en cuenta que el Bean debe recordar, no solo
-    el producto seleccionado, sino la cantidad! (implemente las clases
-    que hagan falta para tal fin).
+1. La página debe mostrar una tabla donde se muestre:
+    - Número de la orden.
+    - Número de ítems asociado a la orden.
 
-3.  En la misma página, se debe mostrar otra tabla, en la que se muestre
-    lo que se ha seleccionado hasta el momento.
+2. Debe tener un botón que permita crear una nueva orden vacía. Al seleccionar esta opción, se debería ver reflejada la nueva orden en la tabla anterior, con 0 ítems.
 
-4.  La interfaz debe ofrecer elementos de formulario que permitan definir en qué moneda se mostrará el costo total de la compra. De la misma manera, la interfaz debe ir mostrando, automáticamente, el valor de los elementos seleccionados hasta ese momento, en la moneda seleccionada. Es decir, si el usuario agrega nuevos elementos al carro de compras, o si cambia el tipo de moneda, automáticamente se debe actualizar el del total mostrado (al igual el texto que indique en qué moneda se está mostrando el valor: COP o USD). Tenga en cuenta que en los servicios suministrados, los productos vienen con sus precios en dólares.
-
+3. Se debe poder seleccionar una de las ordenes. Al hacer esto, en otra parte de la interfaz se debe:
+    - Mostrar el detalle de los ítems asociados a la orden.
+    - Mostrar el valor actual total de la orden.
+    - Ofrecer una opción para agregar un nuevo ítem a la cuenta. Por ahora el modelo no contempla un catálogo de platos, por lo que se deben ingresar los detalles cada vez: tipo de producto (bebida, plato), nombre y precio. Al agregar cada ítem, se debería recalcular y mostrar automáticamente el nuevo valor de la cuenta.
     
-
 Para hacer esto revise:
 
 Sección 3.33 del manual de PrimeFaces, en especial la página 159 que se
