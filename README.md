@@ -120,7 +120,7 @@ fallido, el premio se reduce en \$10.000.
 	```
 
 2.  Para verificar el funcionamiento de la aplicación, agregue el plugin
-    jetty-runner dentro de los plugins de la fase de
+    tomcat-runner dentro de los plugins de la fase de
     construcción (build). Tenga en cuenta que en la configuración del
     plugin se indica bajo que ruta quedará la aplicación:
 
