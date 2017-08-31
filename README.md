@@ -192,3 +192,9 @@ uno debajo del otro), revise el uso de éste en la sección 3.64 del mismo
 manual, o a través de las demostraciones disponibles en:
 
 [*http://www.primefaces.org/showcase/ui/panel/layout/element.xhtml*](http://www.primefaces.org/showcase/ui/panel/layout/element.xhtml)
+
+
+Para el ejercicio anterior tenga también en cuenta:
+
+- La aplicación debería cambiar de comportamiento cuando se cambie la configuración del Contenedor Guice.
+- El esquema de pruebas desarrollado debería seguir funcionando.
